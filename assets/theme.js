@@ -492,7 +492,7 @@ function setupScrollAnimations() {
 
 // 6. NEWSLETTER REGISTRATION LOGIC
 function setupNewsletterValidation() {
-  const form = document.getElementById("newsletter-form");
+  const form = document.getElementById("newsletter-form") || document.querySelector(".newsletter-form");
   const msg = document.getElementById("newsletter-msg");
 
   if (form && msg) {

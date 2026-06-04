@@ -85,7 +85,7 @@
             <ul class="footer-links">
               {%- for link in linklists[block.settings.menu].links -%}
                 <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
-              {%- empty -%}
+              {%- else -%}
                 <!-- Empty state fallback links -->
                 <li><a href="#products">Heat & Eat Curries</a></li>
                 <li><a href="#products">Ready-to-Cook Kebabs</a></li>
