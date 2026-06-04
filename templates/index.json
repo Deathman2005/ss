@@ -204,12 +204,21 @@
         "review_2",
         "review_3"
       ]
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "tagline": "Subscribe",
+        "title": "Join the Royal Table",
+        "description": "Subscribe to receive 200-year-old culinary stories, secret recipe reveals, and 15% off your first luxury feast."
+      }
     }
   },
   "order": [
     "hero_banner",
     "why_shahi_serve",
     "featured_products",
-    "testimonials"
+    "testimonials",
+    "newsletter"
   ]
 }

@@ -6,34 +6,7 @@
 
 <footer>
   <div class="container">
-    <!-- Newsletter Signup Section nested at the top of footer or right above it -->
-    {%- if section.settings.show_newsletter -%}
-      <div class="newsletter animate-on-scroll">
-        <div class="newsletter-box">
-          <span class="section-tagline">{{ section.settings.newsletter_tagline | default: "Subscribe" }}</span>
-          <h2>{{ section.settings.newsletter_title | default: "Join the Royal Table" }}</h2>
-          <p>{{ section.settings.newsletter_desc | default: "Subscribe to receive 200-year-old culinary stories, secret recipe reveals, and 15% off your first luxury feast." }}</p>
-          
-          {%- form 'customer', id: 'newsletter-form', class: 'newsletter-form' -%}
-            <input type="hidden" name="contact[tags]" value="newsletter">
-            <input 
-              type="email" 
-              name="contact[email]" 
-              id="NewsletterEmail"
-              class="newsletter-input" 
-              value="{{ form.email }}"
-              placeholder="Enter your email address" 
-              aria-label="Email address" 
-              required
-            >
-            <button type="submit" class="btn btn-primary" id="newsletter-submit">
-              Subscribe
-            </button>
-          {%- endform -%}
-          <div class="newsletter-msg" id="newsletter-msg" role="alert"></div>
-        </div>
-      </div>
-    {%- endif -%}
+    <!-- Newsletter signup is now handled as a separate section -->
 
     <div class="footer-grid">
       <!-- Brand Info -->
@@ -153,34 +126,6 @@
       "id": "brand_desc",
       "label": "Brand Description",
       "default": "Reviving 200-year-old Indian heritage non-veg cuisine using real ghee, whole spices, and zero preservatives. Honest clean label meals built for modern convenience."
-    },
-    {
-      "type": "header",
-      "content": "Newsletter Settings"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_newsletter",
-      "label": "Show Newsletter Signup",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "newsletter_tagline",
-      "label": "Newsletter Tagline",
-      "default": "Subscribe"
-    },
-    {
-      "type": "text",
-      "id": "newsletter_title",
-      "label": "Newsletter Headline",
-      "default": "Join the Royal Table"
-    },
-    {
-      "type": "textarea",
-      "id": "newsletter_desc",
-      "label": "Newsletter Description",
-      "default": "Subscribe to receive 200-year-old culinary stories, secret recipe reveals, and 15% off your first luxury feast."
     },
     {
       "type": "header",
