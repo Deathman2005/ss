@@ -216,8 +216,8 @@
   },
   "order": [
     "hero_banner",
-    "why_shahi_serve",
     "featured_products",
+    "why_shahi_serve",
     "testimonials",
     "newsletter"
   ]
