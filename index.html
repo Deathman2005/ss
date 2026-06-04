@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shahi Serve | Heritage Indian Non-Veg Cuisine, Reimagined</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Discover Shahi Serve, a modern food brand reviving India's 200-year-old heritage non-veg recipes. Crafted in real ghee, whole spices, with zero preservatives and zero additives. Heat & Eat curries, ready-to-cook kebabs, and gourmet delicacies.">
+  <meta name="keywords" content="Shahi Serve, Indian non-veg, ready to eat curries, ready to cook kebabs, traditional Indian food, clean label non-veg, real ghee curries, slow cooked meats">
+  <meta name="author" content="Shahi Serve">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.shahiserve.com/">
+  <meta property="og:title" content="Shahi Serve | Heritage Indian Non-Veg Cuisine, Reimagined">
+  <meta property="og:description" content="Clean-label heritage non-veg curries & kebabs made in real ghee with no preservatives. Authentic 200-year-old recipes brought to your pantry.">
+  <meta property="og:image" content="assets/images/hero_banner.png">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.shahiserve.com/">
+  <meta property="twitter:title" content="Shahi Serve | Heritage Indian Non-Veg Cuisine, Reimagined">
+  <meta property="twitter:description" content="Clean-label heritage non-veg curries & kebabs made in real ghee with no preservatives. Authentic 200-year-old recipes brought to your pantry.">
+  <meta property="twitter:image" content="assets/images/hero_banner.png">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Premium Sticky Header -->
+  <header>
+    <div class="container">
+      <!-- Brand Logo -->
+      <a href="#" class="logo" id="header-logo-link" aria-label="Shahi Serve Homepage">
+        <div>
+          <span class="logo-text">SHAHI SERVE</span>
+          <span class="logo-tagline">Heritage Kitchens</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav aria-label="Main Navigation">
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link" id="nav-link-home">Home</a></li>
+          <li><a href="#story" class="nav-link" id="nav-link-story">Our Story</a></li>
+          <li><a href="#products" class="nav-link" id="nav-link-products">Store</a></li>
+          <li><a href="#why-us" class="nav-link" id="nav-link-why">Why Shahi</a></li>
+          <li><a href="#process" class="nav-link" id="nav-link-process">Our Process</a></li>
+          <li><a href="#faqs" class="nav-link" id="nav-link-faqs">FAQs</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons (Cart / Profile) -->
+      <div class="header-actions">
+        <!-- Cart Drawer Button -->
+        <button class="cart-icon-btn" id="cart-btn" aria-label="Open shopping bag" aria-haspopup="dialog">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <span class="cart-badge" id="cart-badge-count" style="display: none;">0</span>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section" id="hero" style="background-image: url('assets/images/hero_banner.png');">
+      <div class="container">
+        <div class="hero-grid">
+          <!-- Text Content -->
+          <div class="hero-content animate-on-scroll">
+            <h1 class="hero-headline">
+              India's Heritage <br><span class="text-gold">Non-Veg Cuisine</span>, Reimagined
+            </h1>
+            <p class="hero-subheadline">
+              Zero Preservatives. Zero Additives. Real Ghee. Whole Spices. Authentic 200-Year-Old Recipes.
+            </p>
+            <div class="hero-ctas">
+              <a href="#products" class="btn btn-primary" id="hero-cta-shop">Shop Now</a>
+              <a href="#story" class="btn btn-secondary" id="hero-cta-explore">Explore Our Story</a>
+            </div>
+            
+            <div class="hero-badge-container">
+              <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                </svg>
+                <span>100% Clean Label</span>
+              </div>
+              <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10zm1-17h-2v6H6v2h7V5z"/>
+                </svg>
+                <span>Ready in 2 Mins</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Featured Product Floating Card -->
+          <div class="hero-visual-card animate-on-scroll">
+            <img src="assets/images/curry_product.png" alt="Signature Shahi Serve Mutton Rogan Josh Curry ready to serve">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Brand Story Section -->
+    <section class="brand-story-section" id="story">
+      <div class="container">
+        <span class="section-tagline">The Awadhi Legacy</span>
+        <h2 class="section-title">A Pantry Revival Worth Savouring</h2>
+        <div class="heritage-divider">
+          <span></span>
+          <svg viewBox="0 0 24 24"><path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-12-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+          <span></span>
+        </div>
+        
+        <div class="brand-story-grid">
+          <!-- Story Narrative -->
+          <div class="story-left animate-on-scroll">
+            <h3 class="story-highlight">
+              "Because 70% of India eats non-veg, yet 90% of packaged food ignores them entirely."
+            </h3>
+            <p class="story-text">
+              Traditional Indian non-veg cooking is a slow, complex, and sacred craft. It requires roasting raw spices, grinding them by hand, and braising tender meats in heavy copper vessels over woodfires with dollops of real desi ghee.
+            </p>
+            <p class="story-text">
+              In today's fast-paced world, this culture is disappearing. Convenience food has meant compromise—relying on chemical preservatives, high-sodium powders, and artificial additives.
+            </p>
+            <p class="story-text">
+              <strong>Shahi Serve is fixing that, one heritage recipe at a time.</strong> We pack authentic, slow-cooked royal delicacies into clean-label, ready-to-eat jars. No preservatives. No fillers. Just taste that takes you home.
+            </p>
+          </div>
+
+          <!-- Stated Statistics Grid -->
+          <div class="story-right animate-on-scroll">
+            <div class="stat-card">
+              <div class="stat-number">70%</div>
+              <div class="stat-label">Of Indians Eat Non-Veg</div>
+              <div class="stat-desc">A culinary truth that defines our national plates.</div>
+            </div>
+            
+            <div class="stat-card">
+              <div class="stat-number">90%</div>
+              <div class="stat-label">Of Package Goods Ignore Them</div>
+              <div class="stat-desc">Leaving home-style cravers with sub-par vegetarian compromises.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Featured Products Section -->
+    <section class="featured-products" id="products">
+      <div class="container">
+        <span class="section-tagline">Discover the Shahi Table</span>
+        <h2 class="section-title">The Royal Storefront</h2>
+        <p class="section-desc">Experience India’s finest slow-cooked meats, seasoned to perfection using original royal family archives.</p>
+        
+        <!-- Interactive Category Tabs -->
+        <div class="product-tabs animate-on-scroll">
+          <button class="tab-btn active" data-category="all" id="tab-all">All Delicacies</button>
+          <button class="tab-btn" data-category="curries" id="tab-curries">Heat & Eat Curries</button>
+          <button class="tab-btn" data-category="kebabs" id="tab-kebabs">Ready-to-Cook Kebabs</button>
+          <button class="tab-btn" data-category="delicacies" id="tab-delicacies">Heritage Delicacies</button>
+        </div>
+
+        <!-- Rendered Products Grid (Populated via app.js) -->
+        <div class="products-grid" id="products-grid">
+          <!-- Fallback mock cards for accessibility/SEO -->
+          <div class="product-card">
+            <div class="product-image-container">
+              <span class="product-badge">Bestseller</span>
+              <img src="assets/images/curry_product.png" alt="Royal Mutton Rogan Josh">
+            </div>
+            <div class="product-info">
+              <h3 class="product-title">Royal Mutton Rogan Josh</h3>
+              <p class="product-description">Slow-cooked mutton in rich traditional Kashmiri spices, real ghee, and bone-marrow gravy.</p>
+              <div class="product-footer">
+                <span class="price-current">₹349</span>
+                <button class="product-add-btn">Add to Bag</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Why Shahi Serve Section -->
+    <section class="why-shahi" id="why-us">
+      <div class="container">
+        <span class="section-tagline">Why Shahi Serve?</span>
+        <h2 class="section-title">Crafted with Uncompromising Integrity</h2>
+        <p class="section-desc">We combine historical recipes with state-of-the-art food technology to deliver luxury without compromises.</p>
+        
+        <div class="benefits-grid">
+          <!-- Benefit 1: Real Ghee -->
+          <div class="benefit-card animate-on-scroll">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+              </svg>
+            </div>
+            <h3 class="benefit-title">100% Real Ghee</h3>
+            <p class="benefit-desc">We never cook in refined seed oils. Every curry is braised exclusively in pure A2 cow ghee for that authentic richness.</p>
+          </div>
+
+          <!-- Benefit 2: Whole Spices -->
+          <div class="benefit-card animate-on-scroll">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+            </div>
+            <h3 class="benefit-title">Hand-Selected Whole Spices</h3>
+            <p class="benefit-desc">No cheap spice powders. We source organic cinnamon, green cardamom, star anise, and stone flower directly from farms.</p>
+          </div>
+
+          <!-- Benefit 3: Clean Label -->
+          <div class="benefit-card animate-on-scroll">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              </svg>
+            </div>
+            <h3 class="benefit-title">Zero Preservatives & Additives</h3>
+            <p class="benefit-desc">We contain no synthetic chemicals, MSG, artificial colors, or texturised soy protein. It is honest food.</p>
+          </div>
+
+          <!-- Benefit 4: 12-Month Shelf Life -->
+          <div class="benefit-card animate-on-scroll">
+            <div class="benefit-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="benefit-title">12-Month Ambient Storage</h3>
+            <p class="benefit-desc">Leveraging modern retort thermal processing (NASA technology), our foods stay fresh for 1 year without cold chain.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Heritage Process Section (Timeline) -->
+    <section class="heritage-process" id="process">
+      <div class="container">
+        <span class="section-tagline">Our Heritage Process</span>
+        <h2 class="section-title">The Journey of Royal Flavours</h2>
+        <p class="section-desc">How we preserve 200-year-old Nawabi kitchen processes inside modern packaged convenience.</p>
+        
+        <div class="timeline">
+          <!-- Step 1 -->
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-badge">1</div>
+            <div class="timeline-content">
+              <span class="timeline-step">Step 1</span>
+              <h3 class="timeline-title">Archival Recipe Sourcing</h3>
+              <p class="timeline-desc">We dig deep into Awadhi, Deccani, and Mughlai culinary journals, interviewing generational royal Khansamas to capture true spice matrices.</p>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-badge">2</div>
+            <div class="timeline-content">
+              <span class="timeline-step">Step 2</span>
+              <h3 class="timeline-title">Braising in Pure Ghee</h3>
+              <p class="timeline-desc">Our meats are hand-marinated for 12 hours, then slow-cooked in large brass cauldrons in small batches over several hours.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-badge">3</div>
+            <div class="timeline-content">
+              <span class="timeline-step">Step 3</span>
+              <h3 class="timeline-title">Hermetic Retort Sealing</h3>
+              <p class="timeline-desc">The cooked curry is packed into multi-layer pouches and pressure-sterilised, sealing in aromas and destroying micro-organisms.</p>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-badge">4</div>
+            <div class="timeline-content">
+              <span class="timeline-step">Step 4</span>
+              <h3 class="timeline-title">Pantry Ready in 2 Mins</h3>
+              <p class="timeline-desc">Simply snip the pouch, heat it in a microwave or saucepan for 120 seconds, and experience history served hot.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Customer Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <span class="section-tagline">Testimonials</span>
+        <h2 class="section-title">Loved by Generational Foodies</h2>
+        <p class="section-desc">Here is what food connoisseurs, working parents, and royal cuisine fans say about Shahi Serve.</p>
+        
+        <div class="testimonials-carousel animate-on-scroll">
+          <div class="testimonial-track" id="testimonial-track">
+            <!-- Slide 1 -->
+            <div class="testimonial-slide active">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <!-- Star SVGs -->
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="testimonial-text">
+                  "I was highly skeptical about packaged non-veg food. But the Rogan Josh blew my mind. The meat was tender, and that layer of ghee on top is exactly how my grandmother cooked it. This is a game changer for busy weeknights."
+                </p>
+                <div class="testimonial-author">Dr. Kabir Sen</div>
+                <div class="testimonial-role">Cardiologist & Food Connoisseur, Kolkata</div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="testimonial-text">
+                  "Being an expat in Bangalore, I missed Delhi's Mughlai flavors. The Galouti Kebabs taste exactly like the street stalls in Aminabad. Soft, aromatic, melts in your mouth instantly. Unbelievable that this came out of a box!"
+                </p>
+                <div class="testimonial-author">Priyanka Verma</div>
+                <div class="testimonial-role">Tech Lead, Bangalore</div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testimonial-slide">
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                  <svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                </div>
+                <p class="testimonial-text">
+                  "No preservatives and clean labels are super important for my family. The Nalli Nihari checks every single box. It's so clean, rich, and tastes completely home-cooked. My kids love it, and I feel completely safe serving it."
+                </p>
+                <div class="testimonial-author">Rohan Mehra</div>
+                <div class="testimonial-role">Parent & Business Owner, New Delhi</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carousel Controls -->
+          <button class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Previous Testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+            </svg>
+          </button>
+          <button class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Next Testimonial">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+
+          <!-- Paginator Dots -->
+          <div class="carousel-dots" id="carousel-dots"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. FAQ Section -->
+    <section class="faq" id="faqs">
+      <div class="container">
+        <span class="section-tagline">Have Questions?</span>
+        <h2 class="section-title">Royal Queries & Answers</h2>
+        <p class="section-desc">Clear information regarding shelf life, ingredients, shipping, and food preparation.</p>
+        
+        <div class="faq-list">
+          <!-- FAQ 1 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <h3>How does the food stay fresh for 12 months without preservatives?</h3>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <p>We use a process called Retort Thermal Processing. Once cooked, the food is sealed inside multi-layer retort pouches to block air and light. The pouch is then steam-sterilised under high pressure, destroying all micro-organisms. It works just like home-canning, maintaining absolute freshness without a single preservative.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <h3>Do you use MSG, hydrogenated oils, or additives?</h3>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <p>No. We are 100% committed to a clean label. We cook exclusively in pure cow ghee and cold-pressed mustard oil. We never add MSG, artificial colors, flavour enhancers, or soy fillers. The list of ingredients you read on the box is exactly what is inside.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 3 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <h3>How do I prepare/heat the food?</h3>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <p>It takes less than 2 minutes! You can heat it in 3 ways: 1) Microwave: Empty contents into a microwave-safe bowl and heat for 90 seconds. 2) Stove: Empty contents into a pan and simmer for 2 minutes. 3) Hot Water Bath: Submerge the sealed pouch in boiling water for 3-5 minutes, snip, and serve.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <h3>Where is the meat sourced?</h3>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <p>We source only high-grade, tender, grass-fed mutton and free-range chickens. All meats are sourced from certified local farms, undergoing stringent quality inspections for safety and hygiene before entering our kitchens.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5 -->
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <h3>Is shipping available across India?</h3>
+              <span class="faq-toggle-icon" aria-hidden="true"></span>
+            </button>
+            <div class="faq-answer">
+              <p>Yes, we ship to over 15,000 pincodes across India. Standard shipping takes 3-5 business days. Free shipping is available on all orders above ₹499.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Newsletter Signup Section -->
+    <section class="newsletter">
+      <div class="container">
+        <div class="newsletter-box animate-on-scroll">
+          <span class="section-tagline">Subscribe</span>
+          <h2>Join the Royal Table</h2>
+          <p>Subscribe to receive 200-year-old culinary stories, secret recipe reveals, and 15% off your first luxury feast.</p>
+          
+          <form class="newsletter-form" id="newsletter-form" novalidate>
+            <input type="email" class="newsletter-input" placeholder="Enter your email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn-primary" id="newsletter-submit">Subscribe</button>
+          </form>
+          <div class="newsletter-msg" id="newsletter-msg" role="alert"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. Premium Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="#" class="logo" id="footer-logo-link" aria-label="Shahi Serve Homepage">
+            <div>
+              <span class="logo-text">SHAHI SERVE</span>
+              <span class="logo-tagline">Heritage Kitchens</span>
+            </div>
+          </a>
+          <p>Reviving 200-year-old Indian heritage non-veg cuisine using real ghee, whole spices, and zero preservatives. Honest clean label meals built for modern convenience.</p>
+          
+          <!-- Social Icons -->
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Shop Column -->
+        <div class="footer-col">
+          <h4>Shop Curations</h4>
+          <ul class="footer-links">
+            <li><a href="#products">Heat & Eat Curries</a></li>
+            <li><a href="#products">Ready-to-Cook Kebabs</a></li>
+            <li><a href="#products">Heritage Delicacies</a></li>
+            <li><a href="#products">Royal Gift Boxes</a></li>
+          </ul>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-col">
+          <h4>Our Mission</h4>
+          <ul class="footer-links">
+            <li><a href="#story">Our Story</a></li>
+            <li><a href="#process">The Kitchen Process</a></li>
+            <li><a href="#faqs">Retort Technology</a></li>
+            <li><a href="#">Sourcing Standards</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Column -->
+        <div class="footer-col">
+          <h4>Help & Care</h4>
+          <ul class="footer-links">
+            <li><a href="#faqs">FAQs</a></li>
+            <li><a href="#">Track Orders</a></li>
+            <li><a href="#">Shipping Policies</a></li>
+            <li><a href="#">Contact Generational Care</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-copy">
+          &copy; 2026 Shahi Serve Foods Private Limited. All Rights Reserved. Crafted for Bharat.
+        </div>
+        <div class="payment-badges">
+          <span class="payment-badge">UPI</span>
+          <span class="payment-badge">Cards</span>
+          <span class="payment-badge">NetBanking</span>
+          <span class="payment-badge">COD</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. Slide-out Shopify Cart Drawer -->
+  <div class="cart-drawer-overlay" id="cart-overlay" role="presentation"></div>
+  <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+    <div class="cart-header">
+      <h2>Shopping Bag</h2>
+      <button class="cart-close-btn" id="cart-close" aria-label="Close shopping bag">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Items list (populated by app.js) -->
+    <div class="cart-items-container" id="cart-items-list">
+      <!-- Fallback when empty -->
+      <div class="cart-empty-message">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <p>Your bag is empty.</p>
+        <p style="font-size: 0.85rem; margin-top: 8px; color: var(--accent-gold-light);">Add some heritage dishes to get started.</p>
+      </div>
+    </div>
+
+    <!-- Footer Checkout calculations -->
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-val" id="cart-subtotal-val">₹0</span>
+      </div>
+      <p class="cart-shipping-note">Taxes and shipping calculated at checkout.</p>
+      <button class="btn btn-primary cart-checkout-btn" id="cart-checkout-btn" onclick="handleCheckout()" disabled>
+        Proceed to Secure Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- Script Import -->
+  <script src="app.js"></script>
+</body>
+</html>

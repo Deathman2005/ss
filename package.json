@@ -1,0 +1,10 @@
+{
+  "name": "shahi-serve-landing-page",
+  "version": "1.0.0",
+  "description": "Premium Shopify storefront landing page for Shahi Serve",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000"
+  },
+  "dependencies": {}
+}
