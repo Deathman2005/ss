@@ -1,0 +1,108 @@
+{%- comment -%}
+  Header section for Shahi Serve storefront.
+  Contains sticky navigation, custom logo uploads, and AJAX cart status counter.
+{%- endcomment -%}
+
+<header id="site-header" class="site-header" role="banner">
+  <div class="container">
+    <!-- Brand Logo -->
+    <a href="{{ routes.root_url }}" class="logo" id="header-logo-link" aria-label="{{ shop.name }} Homepage">
+      {%- if section.settings.logo != blank -%}
+        <img 
+          src="{{ section.settings.logo | image_url: width: 300 }}" 
+          alt="{{ section.settings.logo.alt | default: shop.name }}" 
+          width="{{ section.settings.logo_width }}"
+          style="max-width: 100%; height: auto;"
+        >
+      {%- else -%}
+        <div>
+          <span class="logo-text">{{ section.settings.logo_text | default: shop.name }}</span>
+          <span class="logo-tagline">{{ section.settings.logo_tagline }}</span>
+        </div>
+      {%- endif -%}
+    </a>
+
+    <!-- Desktop Navigation Menu -->
+    <nav aria-label="Main Navigation">
+      <ul class="nav-menu" id="nav-menu">
+        {%- assign menu_handle = section.settings.menu | default: 'main-menu' -%}
+        {%- if linklists[menu_handle].links.size > 0 -%}
+          {%- for link in linklists[menu_handle].links -%}
+            <li>
+              <a href="{{ link.url }}" class="nav-link {% if link.active %}active{% endif %}" id="nav-link-{{ forloop.index }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        {%- else -%}
+          <!-- Fallback links if no Shopify navigation menu is assigned -->
+          <li><a href="#hero" class="nav-link" id="nav-link-home">Home</a></li>
+          <li><a href="#story" class="nav-link" id="nav-link-story">Our Story</a></li>
+          <li><a href="#products" class="nav-link" id="nav-link-products">Store</a></li>
+          <li><a href="#why-us" class="nav-link" id="nav-link-why">Why Shahi</a></li>
+          <li><a href="#process" class="nav-link" id="nav-link-process">Our Process</a></li>
+          <li><a href="#faqs" class="nav-link" id="nav-link-faqs">FAQs</a></li>
+        {%- endif -%}
+      </ul>
+    </nav>
+
+    <!-- Action Buttons (Cart / Profile) -->
+    <div class="header-actions">
+      <!-- Cart Drawer Trigger Button -->
+      <button class="cart-icon-btn" id="cart-btn" aria-label="Open shopping bag" aria-haspopup="dialog">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+        </svg>
+        <span class="cart-badge" id="cart-badge-count" style="display: none;">{{ cart.item_count }}</span>
+      </button>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="menu-toggle" id="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="24" height="24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image"
+    },
+    {
+      "type": "range",
+      "id": "logo_width",
+      "min": 50,
+      "max": 250,
+      "step": 10,
+      "unit": "px",
+      "label": "Custom Logo Width",
+      "default": 150
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text (Fallback)",
+      "default": "SHAHI SERVE"
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline",
+      "label": "Logo Tagline (Fallback)",
+      "default": "Heritage Kitchens"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation Menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

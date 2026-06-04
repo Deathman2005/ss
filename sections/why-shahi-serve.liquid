@@ -1,0 +1,352 @@
+{%- comment -%}
+  Why Shahi Serve & Story Section.
+  Combines Awadhi Legacy story narration, statistics metrics cards, core benefit cards,
+  and the 4-step timeline heritage kitchen process.
+{%- endcomment -%}
+
+<!-- 1. Brand Story Section -->
+<section class="brand-story-section" id="story">
+  <div class="container">
+    <span class="section-tagline">{{ section.settings.story_tagline | default: "The Awadhi Legacy" }}</span>
+    <h2 class="section-title">{{ section.settings.story_title | default: "A Pantry Revival Worth Savouring" }}</h2>
+    
+    <div class="heritage-divider">
+      <span></span>
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M12 2c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 14c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-12-7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 7c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+      </svg>
+      <span></span>
+    </div>
+    
+    <div class="brand-story-grid">
+      <!-- Story Narrative -->
+      <div class="story-left animate-on-scroll">
+        <h3 class="story-highlight">
+          "{{ section.settings.story_highlight | default: "Because 70% of India eats non-veg, yet 90% of packaged food ignores them entirely." }}"
+        </h3>
+        <div class="story-text-container">
+          {{ section.settings.story_desc | default: "<p>We're fixing that, one heritage recipe at a time. Slow-cooked meats, seasoned using original royal family archives, cooked in real ghee with no preservatives.</p>" }}
+        </div>
+      </div>
+
+      <!-- Stated Statistics Grid -->
+      <div class="story-right animate-on-scroll">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'stat_card' -%}
+            <div class="stat-card" {{ block.shopify_attributes }}>
+              <div class="stat-number">{{ block.settings.stat_value }}</div>
+              <div class="stat-label">{{ block.settings.stat_label }}</div>
+              <div class="stat-desc">{{ block.settings.stat_desc }}</div>
+            </div>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Benefits / Feature Cards Section -->
+<section class="why-shahi" id="why-us">
+  <div class="container">
+    <span class="section-tagline">{{ section.settings.benefits_tagline | default: "Why Shahi Serve?" }}</span>
+    <h2 class="section-title">{{ section.settings.benefits_title | default: "Crafted with Uncompromising Integrity" }}</h2>
+    <p class="section-desc">{{ section.settings.benefits_desc | default: "We combine historical recipes with state-of-the-art food technology to deliver luxury without compromises." }}</p>
+    
+    <div class="benefits-grid">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'benefit_card' -%}
+          <div class="benefit-card animate-on-scroll" {{ block.shopify_attributes }}>
+            <div class="benefit-icon">
+              {%- if block.settings.icon == 'ghee' -%}
+                <!-- Sun/Ghee Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m11.314 11.314l.707.707M12 5a7 7 0 100 14 7 7 0 000-14z" />
+                </svg>
+              {%- elsif block.settings.icon == 'spices' -%}
+                <!-- Spice jar Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                </svg>
+              {%- elsif block.settings.icon == 'shield' -%}
+                <!-- Clean Label Shield -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              {%- else -%}
+                <!-- Calendar/Time Shelf-life Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              {%- endif -%}
+            </div>
+            <h3 class="benefit-title">{{ block.settings.title }}</h3>
+            <p class="benefit-desc">{{ block.settings.desc }}</p>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+<!-- 3. Heritage Kitchens Timeline Process -->
+<section class="heritage-process" id="process">
+  <div class="container">
+    <span class="section-tagline">{{ section.settings.process_tagline | default: "Our Heritage Process" }}</span>
+    <h2 class="section-title">{{ section.settings.process_title | default: "The Journey of Royal Flavours" }}</h2>
+    <p class="section-desc">{{ section.settings.process_desc | default: "How we preserve 200-year-old Nawabi kitchen processes inside modern packaged convenience." }}</p>
+    
+    <div class="timeline">
+      {%- assign index_count = 0 -%}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'process_step' -%}
+          {%- assign index_count = index_count | plus: 1 -%}
+          <div class="timeline-item animate-on-scroll" {{ block.shopify_attributes }}>
+            <div class="timeline-badge">{{ index_count }}</div>
+            <div class="timeline-content">
+              <span class="timeline-step">Step {{ index_count }}</span>
+              <h3 class="timeline-title">{{ block.settings.title }}</h3>
+              <p class="timeline-desc">{{ block.settings.desc }}</p>
+            </div>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Why Shahi Serve",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Brand Story Settings"
+    },
+    {
+      "type": "text",
+      "id": "story_tagline",
+      "label": "Story Tagline",
+      "default": "The Awadhi Legacy"
+    },
+    {
+      "type": "text",
+      "id": "story_title",
+      "label": "Story Title",
+      "default": "A Pantry Revival Worth Savouring"
+    },
+    {
+      "type": "text",
+      "id": "story_highlight",
+      "label": "Story Highlight Quote",
+      "default": "Because 70% of India eats non-veg, yet 90% of packaged food ignores them entirely."
+    },
+    {
+      "type": "richtext",
+      "id": "story_desc",
+      "label": "Story Body Narrative",
+      "default": "<p>Traditional Indian non-veg cooking is a slow, complex, and sacred craft. We pack authentic slow-cooked royal delicacies into clean-label, ready-to-eat jars. No preservatives. No fillers. Taste that takes you home.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Benefits Section Settings"
+    },
+    {
+      "type": "text",
+      "id": "benefits_tagline",
+      "label": "Benefits Tagline",
+      "default": "Why Shahi Serve?"
+    },
+    {
+      "type": "text",
+      "id": "benefits_title",
+      "label": "Benefits Title",
+      "default": "Crafted with Uncompromising Integrity"
+    },
+    {
+      "type": "text",
+      "id": "benefits_desc",
+      "label": "Benefits Subtitle",
+      "default": "We combine historical recipes with state-of-the-art food technology to deliver luxury without compromises."
+    },
+    {
+      "type": "header",
+      "content": "Heritage Process Timeline"
+    },
+    {
+      "type": "text",
+      "id": "process_tagline",
+      "label": "Process Tagline",
+      "default": "Our Heritage Process"
+    },
+    {
+      "type": "text",
+      "id": "process_title",
+      "label": "Process Title",
+      "default": "The Journey of Royal Flavours"
+    },
+    {
+      "type": "text",
+      "id": "process_desc",
+      "label": "Process Subtitle",
+      "default": "How we preserve 200-year-old Nawabi kitchen processes inside modern packaged convenience."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "stat_card",
+      "name": "Story Statistic",
+      "settings": [
+        {
+          "type": "text",
+          "id": "stat_value",
+          "label": "Stat Number (e.g. 70%)",
+          "default": "70%"
+        },
+        {
+          "type": "text",
+          "id": "stat_label",
+          "label": "Stat Label",
+          "default": "Of Indians Eat Non-Veg"
+        },
+        {
+          "type": "text",
+          "id": "stat_desc",
+          "label": "Stat Short Description",
+          "default": "A culinary truth that defines our national plates."
+        }
+      ]
+    },
+    {
+      "type": "benefit_card",
+      "name": "Benefit Highlight",
+      "settings": [
+        {
+          "type": "select",
+          "id": "icon",
+          "label": "Card Icon",
+          "options": [
+            { "value": "ghee", "label": "Ghee (Gold Sun)" },
+            { "value": "spices", "label": "Spices (Spice Jar)" },
+            { "value": "shield", "label": "Shield (Clean Label)" },
+            { "value": "calendar", "label": "Calendar (Shelf Life)" }
+          ],
+          "default": "ghee"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Benefit Title",
+          "default": "100% Real Ghee"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Benefit Description",
+          "default": "We never cook in refined seed oils. Every curry is braised exclusively in pure A2 cow ghee."
+        }
+      ]
+    },
+    {
+      "type": "process_step",
+      "name": "Timeline Process Step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Step Title",
+          "default": "Archival Recipe Sourcing"
+        },
+        {
+          "type": "textarea",
+          "id": "desc",
+          "label": "Step Description",
+          "default": "We dig deep into Awadhi, Deccani, and Mughlai culinary journals, interviewing generational royal Khansamas to capture true spice matrices."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Shahi Serve (All-in-One)",
+      "blocks": [
+        {
+          "type": "stat_card",
+          "settings": {
+            "stat_value": "70%",
+            "stat_label": "Of Indians Eat Non-Veg",
+            "stat_desc": "A culinary truth that defines our national plates."
+          }
+        },
+        {
+          "type": "stat_card",
+          "settings": {
+            "stat_value": "90%",
+            "stat_label": "Of Packaged Goods Ignore Them",
+            "stat_desc": "Leaving home-style cravers with sub-par compromises."
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "ghee",
+            "title": "100% Real Ghee",
+            "desc": "We never cook in refined seed oils. Every curry is braised exclusively in pure A2 cow ghee for that authentic richness."
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "spices",
+            "title": "Whole Spices",
+            "desc": "No cheap spice powders. We source organic cinnamon, green cardamom, star anise, and stone flower directly from farms."
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "shield",
+            "title": "Zero Preservatives",
+            "desc": "We contain no synthetic chemicals, MSG, artificial colors, or texturised soy protein. It is honest food."
+          }
+        },
+        {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "calendar",
+            "title": "12-Month Shelf Life",
+            "desc": "Leveraging modern retort thermal processing (NASA technology), our foods stay fresh for 1 year without cold chain."
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Archival Recipe Sourcing",
+            "desc": "We dig deep into Awadhi, Deccani, and Mughlai culinary journals, interviewing generational royal Khansamas to capture true spice matrices."
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Braising in Pure Ghee",
+            "desc": "Our meats are hand-marinated for 12 hours, then slow-cooked in large brass cauldrons in small batches over several hours."
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Hermetic Retort Sealing",
+            "desc": "The cooked curry is packed into multi-layer pouches and pressure-sterilised, sealing in aromas and destroying micro-organisms."
+          }
+        },
+        {
+          "type": "process_step",
+          "settings": {
+            "title": "Pantry Ready in 2 Mins",
+            "desc": "Simply snip the pouch, heat it in a microwave or saucepan for 120 seconds, and experience history served hot."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

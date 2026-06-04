@@ -1,0 +1,91 @@
+{%- comment -%}
+  Main Shopping Cart Details Section for Shahi Serve.
+{%- endcomment -%}
+
+<section class="main-cart-section" style="padding-top: calc(var(--header-height) + 60px);">
+  <div class="container">
+    <span class="section-tagline">Your Selections</span>
+    <h1 class="section-title" style="text-align: left; margin-bottom: 40px;">Shopping Bag</h1>
+
+    <div class="cart-page-grid">
+      <!-- Cart Items Table -->
+      <div class="cart-page-items">
+        {%- if cart.item_count > 0 -%}
+          {%- for item in cart.items -%}
+            <div class="cart-page-item" style="display: flex; gap: 20px; padding: 20px 0; border-bottom: 1px solid rgba(183, 140, 46, 0.15);">
+              <div class="cart-item-img" style="width: 100px; height: 100px;">
+                <img src="{{ item.image | image_url: width: 240 }}" alt="{{ item.title }}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+              </div>
+              <div class="cart-item-details" style="flex-grow: 1;">
+                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">{{ item.product_title }}</h3>
+                <div style="font-size: 0.85rem; color: var(--accent-gold-light); margin-bottom: 10px;">{{ item.variant_title }}</div>
+                <div style="font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">{{ item.final_line_price | money_without_trailing_zeros }}</div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <div class="quantity-selector">
+                    <button type="button" class="qty-btn" onclick="updateCartQuantityAJAX('{{ item.key }}', {{ item.quantity | minus: 1 }})">-</button>
+                    <span class="qty-val">{{ item.quantity }}</span>
+                    <button type="button" class="qty-btn" onclick="updateCartQuantityAJAX('{{ item.key }}', {{ item.quantity | plus: 1 }})">+</button>
+                  </div>
+                  <button type="button" class="cart-item-remove" onclick="updateCartQuantityAJAX('{{ item.key }}', 0)">Remove</button>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <div style="text-align: center; padding: 60px 0; color: var(--text-muted);">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="60" height="60" style="margin: 0 auto 20px auto; color: var(--accent-gold);">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+            </svg>
+            <h3>Your shopping bag is empty.</h3>
+            <a href="{{ routes.all_products_collection_url }}" class="btn btn-primary" style="margin-top: 20px;">Explore Heritage Dishes</a>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <!-- Checkout Summary Column -->
+      {%- if cart.item_count > 0 -%}
+        <div class="cart-page-summary">
+          <div class="cart-summary-card" style="background: var(--bg-secondary); border: var(--border-gold); padding: 30px; border-radius: 12px; position: sticky; top: 100px;">
+            <h3 style="font-size: 1.4rem; margin-bottom: 25px; border-bottom: 1px solid rgba(183, 140, 46, 0.15); padding-bottom: 15px;">Order Summary</h3>
+            
+            <div style="display: flex; justify-content: space-between; margin-bottom: 15px; font-weight: 600;">
+              <span>Subtotal</span>
+              <span style="color: var(--accent-gold-light); font-size: 1.25rem;">{{ cart.total_price | money_without_trailing_zeros }}</span>
+            </div>
+            
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 30px; line-height: 1.5;">Taxes and shipping charges are calculated during checkout.</p>
+            
+            <form action="/cart" method="post" novalidate>
+              <button type="submit" name="checkout" class="btn btn-primary" style="width: 100%;">
+                Proceed to Checkout
+              </button>
+            </form>
+          </div>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+<style>
+  .cart-page-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: flex-start;
+  }
+  @media (max-width: 991px) {
+    .cart-page-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Cart Contents",
+  "settings": []
+}
+{% endschema %}

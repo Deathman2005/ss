@@ -1,0 +1,241 @@
+{%- comment -%}
+  Footer section for Shahi Serve storefront.
+  Contains customizable logo, rich rich-text brand stories, dynamic social links,
+  integrated Shopify customer newsletter list submissions, and footer navigation blocks.
+{%- endcomment -%}
+
+<footer>
+  <div class="container">
+    <!-- Newsletter Signup Section nested at the top of footer or right above it -->
+    {%- if section.settings.show_newsletter -%}
+      <div class="newsletter animate-on-scroll">
+        <div class="newsletter-box">
+          <span class="section-tagline">{{ section.settings.newsletter_tagline | default: "Subscribe" }}</span>
+          <h2>{{ section.settings.newsletter_title | default: "Join the Royal Table" }}</h2>
+          <p>{{ section.settings.newsletter_desc | default: "Subscribe to receive 200-year-old culinary stories, secret recipe reveals, and 15% off your first luxury feast." }}</p>
+          
+          {%- form 'customer', id: 'newsletter-form', class: 'newsletter-form' -%}
+            <input type="hidden" name="contact[tags]" value="newsletter">
+            <input 
+              type="email" 
+              name="contact[email]" 
+              id="NewsletterEmail"
+              class="newsletter-input" 
+              value="{{ form.email }}"
+              placeholder="Enter your email address" 
+              aria-label="Email address" 
+              required
+            >
+            <button type="submit" class="btn btn-primary" id="newsletter-submit">
+              Subscribe
+            </button>
+          {%- endform -%}
+          <div class="newsletter-msg" id="newsletter-msg" role="alert"></div>
+        </div>
+      </div>
+    {%- endif -%}
+
+    <div class="footer-grid">
+      <!-- Brand Info -->
+      <div class="footer-brand">
+        <a href="{{ routes.root_url }}" class="logo" id="footer-logo-link" aria-label="{{ shop.name }} Homepage">
+          {%- if section.settings.footer_logo != blank -%}
+            <img src="{{ section.settings.footer_logo | image_url: width: 300 }}" alt="{{ shop.name }}" style="max-width: 100%; height: auto;">
+          {%- else -%}
+            <div>
+              <span class="logo-text">{{ section.settings.logo_text | default: shop.name }}</span>
+              <span class="logo-tagline">{{ section.settings.logo_tagline }}</span>
+            </div>
+          {%- endif -%}
+        </a>
+        <p>{{ section.settings.brand_desc | default: "Reviving 200-year-old Indian heritage non-veg cuisine using real ghee, whole spices, and zero preservatives. Honest clean label meals built for modern convenience." }}</p>
+        
+        <!-- Social Icons -->
+        <div class="social-links">
+          {%- if settings.social_instagram_link != blank -%}
+            <a href="{{ settings.social_instagram_link }}" class="social-link" aria-label="Instagram" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" />
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_facebook_link != blank -%}
+            <a href="{{ settings.social_facebook_link }}" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+          {%- endif -%}
+          {%- if settings.social_twitter_link != blank -%}
+            <a href="{{ settings.social_twitter_link }}" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg>
+            </a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      <!-- Customizable Navigation Menu Columns -->
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'footer_menu' -%}
+          <div class="footer-col" {{ block.shopify_attributes }}>
+            <h4>{{ block.settings.title | escape }}</h4>
+            <ul class="footer-links">
+              {%- for link in linklists[block.settings.menu].links -%}
+                <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+              {%- empty -%}
+                <!-- Empty state fallback links -->
+                <li><a href="#products">Heat & Eat Curries</a></li>
+                <li><a href="#products">Ready-to-Cook Kebabs</a></li>
+                <li><a href="#products">Heritage Delicacies</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+      <div class="footer-copy">
+        &copy; {{ 'now' | date: "%Y" }} {{ shop.name }}. All Rights Reserved. Crafted for Bharat.
+      </div>
+      
+      {%- if section.settings.show_payment_icons -%}
+        <div class="payment-badges">
+          {%- if shop.enabled_payment_types.size > 0 -%}
+            {%- for type in shop.enabled_payment_types -%}
+              <span class="payment-badge">{{ type | replace: '_', ' ' | upcase }}</span>
+            {%- endfor -%}
+          {%- else -%}
+            <!-- Fallback design payment badges -->
+            <span class="payment-badge">UPI</span>
+            <span class="payment-badge">Cards</span>
+            <span class="payment-badge">NetBanking</span>
+            <span class="payment-badge">COD</span>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Footer Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "footer_logo",
+      "label": "Footer Logo"
+    },
+    {
+      "type": "text",
+      "id": "logo_text",
+      "label": "Logo Text (Fallback)",
+      "default": "SHAHI SERVE"
+    },
+    {
+      "type": "text",
+      "id": "logo_tagline",
+      "label": "Logo Tagline (Fallback)",
+      "default": "Heritage Kitchens"
+    },
+    {
+      "type": "textarea",
+      "id": "brand_desc",
+      "label": "Brand Description",
+      "default": "Reviving 200-year-old Indian heritage non-veg cuisine using real ghee, whole spices, and zero preservatives. Honest clean label meals built for modern convenience."
+    },
+    {
+      "type": "header",
+      "content": "Newsletter Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "Show Newsletter Signup",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "newsletter_tagline",
+      "label": "Newsletter Tagline",
+      "default": "Subscribe"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_title",
+      "label": "Newsletter Headline",
+      "default": "Join the Royal Table"
+    },
+    {
+      "type": "textarea",
+      "id": "newsletter_desc",
+      "label": "Newsletter Description",
+      "default": "Subscribe to receive 200-year-old culinary stories, secret recipe reveals, and 15% off your first luxury feast."
+    },
+    {
+      "type": "header",
+      "content": "Bottom Footer Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_payment_icons",
+      "label": "Show Payment Badges",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "footer_menu",
+      "name": "Footer Menu Column",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Column Title",
+          "default": "Shop Curations"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Footer Column Menu"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Footer",
+      "blocks": [
+        {
+          "type": "footer_menu",
+          "settings": {
+            "title": "Shop Curations"
+          }
+        },
+        {
+          "type": "footer_menu",
+          "settings": {
+            "title": "Our Mission"
+          }
+        },
+        {
+          "type": "footer_menu",
+          "settings": {
+            "title": "Help & Care"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

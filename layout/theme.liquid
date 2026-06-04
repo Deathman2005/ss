@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="{{ settings.color_bg }}">
+    <link rel="canonical" href="{{ canonical_url }}">
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
+    {%- endif -%}
+
+    <title>
+      {{ page_title }}
+      {%- if current_tags %} &ndash; tagged "{{ current_tags | join: ', ' }}"{% endif -%}
+      {%- if current_page != 1 %} &ndash; Page {{ current_page }}{% endif -%}
+      {%- unless page_title contains shop.name %} &ndash; {{ shop.name }}{% endunless -%}
+    </title>
+
+    {% if page_description %}
+      <meta name="description" content="{{ page_description | escape }}">
+    {% endif %}
+
+    {% render 'meta-tags' %}
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+
+    <!-- CSS stylesheet -->
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
+
+    <style>
+      :root {
+        --bg-primary: {{ settings.color_bg | default: '#282272' }};
+        --bg-secondary: {{ settings.color_bg_secondary | default: '#1d1956' }};
+        --bg-darker: {{ settings.color_bg_darker | default: '#13103d' }};
+        --accent-gold: {{ settings.color_accent | default: '#B78C2E' }};
+        --accent-gold-light: {{ settings.color_accent_light | default: '#D9B45D' }};
+        --accent-gold-dark: {{ settings.color_accent_dark | default: '#8c671b' }};
+        --text-primary: {{ settings.color_text | default: '#FFFFFF' }};
+        --text-secondary: {{ settings.color_text_secondary | default: '#E3E1F5' }};
+        --text-muted: {{ settings.color_text_muted | default: '#A8A4D1' }};
+      }
+    </style>
+
+    <!-- Shopify Header Hook -->
+    {{ content_for_header }}
+  </head>
+
+  <body class="template-{{ template.name }}">
+    <!-- Premium Header -->
+    {% section 'header' %}
+
+    <main id="MainContent" role="main" tabindex="-1">
+      {{ content_for_layout }}
+    </main>
+
+    <!-- Global Footer -->
+    {% section 'footer' %}
+
+    <!-- Slide-out Shopify Cart Drawer -->
+    <div class="cart-drawer-overlay" id="cart-overlay" role="presentation"></div>
+    <aside class="cart-drawer" id="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+      <div class="cart-header">
+        <h2>Shopping Bag</h2>
+        <button class="cart-close-btn" id="cart-close" aria-label="Close shopping bag">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Items list (populated dynamically by theme.js using AJAX API) -->
+      <div class="cart-items-container" id="cart-items-list">
+        <div class="cart-empty-message">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+          <p>Your bag is empty.</p>
+          <p style="font-size: 0.85rem; margin-top: 8px; color: var(--accent-gold-light);">Add some heritage dishes to get started.</p>
+        </div>
+      </div>
+
+      <!-- Footer Checkout calculations -->
+      <div class="cart-footer">
+        <div class="cart-subtotal-row">
+          <span>Subtotal</span>
+          <span class="cart-subtotal-val" id="cart-subtotal-val">₹0</span>
+        </div>
+        <p class="cart-shipping-note">Taxes and shipping calculated at checkout.</p>
+        <button class="btn btn-primary cart-checkout-btn" id="cart-checkout-btn" onclick="handleCheckout()" disabled>
+          Proceed to Secure Checkout
+        </button>
+      </div>
+    </aside>
+
+    <!-- Theme JS scripts -->
+    <script src="{{ 'theme.js' | asset_url }}" defer></script>
+  </body>
+</html>

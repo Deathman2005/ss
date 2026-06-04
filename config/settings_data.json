@@ -1,0 +1,17 @@
+{
+  "current": {
+    "color_bg": "#282272",
+    "color_bg_secondary": "#1d1956",
+    "color_bg_darker": "#13103d",
+    "color_accent": "#B78C2E",
+    "color_accent_light": "#D9B45D",
+    "color_accent_dark": "#8c671b",
+    "color_text": "#FFFFFF",
+    "color_text_secondary": "#E3E1F5",
+    "color_text_muted": "#A8A4D1",
+    "social_instagram_link": "https://instagram.com/shahiserve",
+    "social_facebook_link": "https://facebook.com/shahiserve",
+    "social_twitter_link": "https://twitter.com/shahiserve"
+  },
+  "presets": {}
+}

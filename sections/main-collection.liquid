@@ -1,0 +1,39 @@
+{%- comment -%}
+  Main Collection Grid Section for Shahi Serve.
+{%- endcomment -%}
+
+<section class="main-collection-section" style="padding-top: calc(var(--header-height) + 60px);">
+  <div class="container">
+    <span class="section-tagline">Collection</span>
+    <h1 class="section-title" style="text-align: left; margin-bottom: 10px;">{{ collection.title }}</h1>
+    
+    {%- if collection.description != blank -%}
+      <div class="section-desc" style="text-align: left; margin: 0 0 50px 0; max-width: 800px;">
+        {{ collection.description }}
+      </div>
+    {%- endif -%}
+
+    <div class="products-grid">
+      {%- if collection.products.size > 0 -%}
+        {%- for product in collection.products -%}
+          {% render 'product-card', product: product %}
+        {%- endfor -%}
+      {%- else -%}
+        <div style="grid-column: 1 / -1; text-align: center; padding: 100px 0; color: var(--text-muted);">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" width="60" height="60" style="margin: 0 auto 20px auto; color: var(--accent-gold);">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+          </svg>
+          <h3>No delicacies found in this collection.</h3>
+          <p style="margin-top: 10px;"><a href="{{ routes.all_products_collection_url }}" class="btn btn-secondary" style="margin-top: 15px;">View All Delicacies</a></p>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Grid",
+  "settings": []
+}
+{% endschema %}

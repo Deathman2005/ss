@@ -1,0 +1,215 @@
+{
+  "name": "Index",
+  "sections": {
+    "hero_banner": {
+      "type": "hero-banner",
+      "settings": {
+        "title": "India's Heritage <br><span class=\"text-gold\">Non-Veg Cuisine</span>, Reimagined",
+        "subheadline": "Zero Preservatives. Zero Additives. Real Ghee. Whole Spices. Authentic 200-Year-Old Recipes.",
+        "cta_text": "Shop Now",
+        "secondary_cta_text": "Explore Our Story"
+      },
+      "blocks": {
+        "badge_1": {
+          "type": "badge",
+          "settings": {
+            "icon": "clean",
+            "label": "100% Clean Label"
+          }
+        },
+        "badge_2": {
+          "type": "badge",
+          "settings": {
+            "icon": "clock",
+            "label": "Ready in 2 Mins"
+          }
+        }
+      },
+      "block_order": [
+        "badge_1",
+        "badge_2"
+      ]
+    },
+    "why_shahi_serve": {
+      "type": "why-shahi-serve",
+      "settings": {
+        "story_tagline": "The Awadhi Legacy",
+        "story_title": "A Pantry Revival Worth Savouring",
+        "story_highlight": "Because 70% of India eats non-veg, yet 90% of packaged food ignores them entirely.",
+        "benefits_tagline": "Why Shahi Serve?",
+        "benefits_title": "Crafted with Uncompromising Integrity"
+      },
+      "blocks": {
+        "stat_1": {
+          "type": "stat_card",
+          "settings": {
+            "stat_value": "70%",
+            "stat_label": "Of Indians Eat Non-Veg",
+            "stat_desc": "A culinary truth that defines our national plates."
+          }
+        },
+        "stat_2": {
+          "type": "stat_card",
+          "settings": {
+            "stat_value": "90%",
+            "stat_label": "Of Packaged Goods Ignore Them",
+            "stat_desc": "Leaving home-style cravers with sub-par compromises."
+          }
+        },
+        "benefit_1": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "ghee",
+            "title": "100% Real Ghee",
+            "desc": "We never cook in refined seed oils. Every curry is braised exclusively in pure A2 cow ghee for that authentic richness."
+          }
+        },
+        "benefit_2": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "spices",
+            "title": "Whole Spices",
+            "desc": "No cheap spice powders. We source organic cinnamon, green cardamom, star anise, and stone flower directly from farms."
+          }
+        },
+        "benefit_3": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "shield",
+            "title": "Zero Preservatives",
+            "desc": "We contain no synthetic chemicals, MSG, artificial colors, or texturised soy protein. It is honest food."
+          }
+        },
+        "benefit_4": {
+          "type": "benefit_card",
+          "settings": {
+            "icon": "calendar",
+            "title": "12-Month Shelf Life",
+            "desc": "Leveraging modern retort thermal processing (NASA technology), our foods stay fresh for 1 year without cold chain."
+          }
+        },
+        "step_1": {
+          "type": "process_step",
+          "settings": {
+            "title": "Archival Recipe Sourcing",
+            "desc": "We dig deep into Awadhi, Deccani, and Mughlai culinary journals, interviewing generational royal Khansamas to capture true spice matrices."
+          }
+        },
+        "step_2": {
+          "type": "process_step",
+          "settings": {
+            "title": "Braising in Ghee",
+            "desc": "Our meats are hand-marinated for 12 hours, then slow-cooked in large brass cauldrons in small batches over several hours."
+          }
+        },
+        "step_3": {
+          "type": "process_step",
+          "settings": {
+            "title": "Hermetic Retort Sealing",
+            "desc": "The cooked curry is packed into multi-layer pouches and pressure-sterilised, sealing in aromas and destroying micro-organisms."
+          }
+        },
+        "step_4": {
+          "type": "process_step",
+          "settings": {
+            "title": "Pantry Ready in 2 Mins",
+            "desc": "Simply snip the pouch, heat it in a microwave or saucepan for 120 seconds, and experience history served hot."
+          }
+        }
+      },
+      "block_order": [
+        "stat_1",
+        "stat_2",
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4",
+        "step_1",
+        "step_2",
+        "step_3",
+        "step_4"
+      ]
+    },
+    "featured_products": {
+      "type": "featured-products",
+      "settings": {
+        "tagline": "Discover the Shahi Table",
+        "title": "The Royal Storefront",
+        "description": "Experience India’s finest slow-cooked meats, seasoned to perfection using original royal family archives."
+      },
+      "blocks": {
+        "tab_1": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "All Delicacies"
+          }
+        },
+        "tab_2": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "Heat & Eat Curries"
+          }
+        },
+        "tab_3": {
+          "type": "collection_tab",
+          "settings": {
+            "label": "Ready-to-Cook Kebabs"
+          }
+        }
+      },
+      "block_order": [
+        "tab_1",
+        "tab_2",
+        "tab_3"
+      ]
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "settings": {
+        "tagline": "Testimonials",
+        "title": "Loved by Generational Foodies",
+        "description": "Here is what food connoisseurs, working parents, and royal cuisine fans say about Shahi Serve."
+      },
+      "blocks": {
+        "review_1": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "I was highly skeptical about packaged non-veg food. But the Rogan Josh blew my mind. The meat was tender, and that layer of ghee on top is exactly how my grandmother cooked it. This is a game changer for busy weeknights.",
+            "author": "Dr. Kabir Sen",
+            "role": "Cardiologist & Food Connoisseur, Kolkata"
+          }
+        },
+        "review_2": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "Being an expat in Bangalore, I missed Delhi's Mughlai flavors. The Galouti Kebabs taste exactly like the street stalls in Aminabad. Soft, aromatic, melts in your mouth instantly. Unbelievable that this came out of a box!",
+            "author": "Priyanka Verma",
+            "role": "Tech Lead, Bangalore"
+          }
+        },
+        "review_3": {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "No preservatives and clean labels are super important for my family. The Nalli Nihari checks every single box. It's so clean, rich, and tastes completely home-cooked. My kids love it, and I feel completely safe serving it.",
+            "author": "Rohan Mehra",
+            "role": "Parent & Business Owner, New Delhi"
+          }
+        }
+      },
+      "block_order": [
+        "review_1",
+        "review_2",
+        "review_3"
+      ]
+    }
+  },
+  "order": [
+    "hero_banner",
+    "why_shahi_serve",
+    "featured_products",
+    "testimonials"
+  ]
+}

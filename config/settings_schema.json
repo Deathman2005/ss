@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Theme info",
+    "theme_name": "Shahi Serve Heritage Theme",
+    "theme_version": "1.0.0",
+    "theme_author": "Antigravity",
+    "theme_documentation_url": "https://github.com/Deathman2005/ss",
+    "theme_support_url": "https://github.com/Deathman2005/ss"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "color_bg",
+        "label": "Primary Background",
+        "default": "#282272"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_secondary",
+        "label": "Secondary Background",
+        "default": "#1d1956"
+      },
+      {
+        "type": "color",
+        "id": "color_bg_darker",
+        "label": "Darker Background",
+        "default": "#13103d"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent Color (Gold)",
+        "default": "#B78C2E"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_light",
+        "label": "Accent Color Light",
+        "default": "#D9B45D"
+      },
+      {
+        "type": "color",
+        "id": "color_accent_dark",
+        "label": "Accent Color Dark",
+        "default": "#8c671b"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Primary Text",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_text_secondary",
+        "label": "Secondary Text",
+        "default": "#E3E1F5"
+      },
+      {
+        "type": "color",
+        "id": "color_text_muted",
+        "label": "Muted Text",
+        "default": "#A8A4D1"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "font_picker",
+        "id": "font_heading",
+        "label": "Heading Font",
+        "default": "playfair_display_n7"
+      },
+      {
+        "type": "font_picker",
+        "id": "font_body",
+        "label": "Body Font",
+        "default": "plus_jakarta_sans_n4"
+      }
+    ]
+  },
+  {
+    "name": "Social Media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram URL"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook URL"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "Twitter URL"
+      }
+    ]
+  }
+]

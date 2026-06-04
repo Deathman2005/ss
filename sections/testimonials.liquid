@@ -1,0 +1,165 @@
+{%- comment -%}
+  Customer Testimonials section for Shahi Serve.
+  Features star rating displays, quotes, author names/details, and customizable slide lists.
+{%- endcomment -%}
+
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <span class="section-tagline">{{ section.settings.tagline | default: "Testimonials" }}</span>
+    <h2 class="section-title">{{ section.settings.title | default: "Loved by Generational Foodies" }}</h2>
+    {%- if section.settings.description != blank -%}
+      <p class="section-desc">{{ section.settings.description }}</p>
+    {%- endif -%}
+    
+    <div class="testimonials-carousel animate-on-scroll">
+      <div class="testimonial-track" id="testimonial-track">
+        {%- assign testimonial_blocks = section.blocks | where: "type", "testimonial" -%}
+        {%- if testimonial_blocks.size > 0 -%}
+          {%- for block in testimonial_blocks -%}
+            <div class="testimonial-slide {% if forloop.first %}active{% endif %}" {{ block.shopify_attributes }}>
+              <div class="testimonial-card">
+                <div class="testimonial-stars">
+                  {%- assign stars_limit = block.settings.stars | default: 5 -%}
+                  {%- for i in (1..stars_limit) -%}
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                    </svg>
+                  {%- endfor -%}
+                </div>
+                <blockquote class="testimonial-text">
+                  "{{ block.settings.text }}"
+                </blockquote>
+                <cite class="testimonial-author">{{ block.settings.author }}</cite>
+                <div class="testimonial-role">{{ block.settings.role }}</div>
+              </div>
+            </div>
+          {%- endfor -%}
+        {%- else -%}
+          <!-- Mock Fallback Slides if None Added Yet -->
+          <div class="testimonial-slide active">
+            <div class="testimonial-card">
+              <div class="testimonial-stars">
+                {%- for i in (1..5) -%}<svg viewBox="0 0 24 24"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>{%- endfor -%}
+              </div>
+              <p class="testimonial-text">"I was highly skeptical about packaged non-veg food. But the Rogan Josh blew my mind. The meat was tender, and that layer of ghee on top is exactly how my grandmother cooked it."</p>
+              <div class="testimonial-author">Dr. Kabir Sen</div>
+              <div class="testimonial-role">Cardiologist & Food Connoisseur, Kolkata</div>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- if testimonial_blocks.size > 1 -%}
+        <!-- Carousel Controls -->
+        <button type="button" class="carousel-btn carousel-btn-prev" id="carousel-prev" aria-label="Previous Testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+        <button type="button" class="carousel-btn carousel-btn-next" id="carousel-next" aria-label="Next Testimonial">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" width="20" height="20">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+        <!-- Paginator Dots -->
+        <div class="carousel-dots" id="carousel-dots"></div>
+      {%- endif -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Testimonials",
+  "settings": [
+    {
+      "type": "text",
+      "id": "tagline",
+      "label": "Section Tagline",
+      "default": "Testimonials"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Loved by Generational Foodies"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Section Subtitle",
+      "default": "Here is what food connoisseurs, working parents, and royal cuisine fans say about Shahi Serve."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "testimonial",
+      "name": "Customer Review",
+      "settings": [
+        {
+          "type": "range",
+          "id": "stars",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "label": "Star Rating",
+          "default": 5
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Review Content",
+          "default": "I was highly skeptical about packaged non-veg food. But the Rogan Josh blew my mind. The meat was tender, and that layer of ghee on top is exactly how my grandmother cooked it."
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author Name",
+          "default": "Dr. Kabir Sen"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Author Role & Location",
+          "default": "Cardiologist & Food Connoisseur, Kolkata"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonials Slider",
+      "blocks": [
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "I was highly skeptical about packaged non-veg food. But the Rogan Josh blew my mind. The meat was tender, and that layer of ghee on top is exactly how my grandmother cooked it. This is a game changer for busy weeknights.",
+            "author": "Dr. Kabir Sen",
+            "role": "Cardiologist & Food Connoisseur, Kolkata"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "Being an expat in Bangalore, I missed Delhi's Mughlai flavors. The Galouti Kebabs taste exactly like the street stalls in Aminabad. Soft, aromatic, melts in your mouth instantly. Unbelievable that this came out of a box!",
+            "author": "Priyanka Verma",
+            "role": "Tech Lead, Bangalore"
+          }
+        },
+        {
+          "type": "testimonial",
+          "settings": {
+            "stars": 5,
+            "text": "No preservatives and clean labels are super important for my family. The Nalli Nihari checks every single box. It's so clean, rich, and tastes completely home-cooked. My kids love it, and I feel completely safe serving it.",
+            "author": "Rohan Mehra",
+            "role": "Parent & Business Owner, New Delhi"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

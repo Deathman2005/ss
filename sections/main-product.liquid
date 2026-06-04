@@ -1,0 +1,149 @@
+{%- comment -%}
+  Main Product Detail Section for Shahi Serve.
+{%- endcomment -%}
+
+<section class="main-product-section" style="padding-top: calc(var(--header-height) + 60px);">
+  <div class="container">
+    <div class="product-detail-grid">
+      <!-- Product Images -->
+      <div class="product-detail-images">
+        {%- if product.featured_image != blank -%}
+          <img src="{{ product.featured_image | image_url: width: 800 }}" alt="{{ product.title }}" class="product-featured-img">
+        {%- else -%}
+          {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+        {%- endif -%}
+      </div>
+
+      <!-- Product Buy Form & Details -->
+      <div class="product-detail-info">
+        <span class="product-category">{{ product.type | default: 'Heritage Kitchens' }}</span>
+        <h1 class="product-detail-title">{{ product.title }}</h1>
+
+        <div class="product-detail-price">
+          <span class="price-current">{{ product.price | money_without_trailing_zeros }}</span>
+          {%- if product.compare_at_price > product.price -%}
+            <span class="price-compare">{{ product.compare_at_price | money_without_trailing_zeros }}</span>
+          {%- endif -%}
+        </div>
+
+        <div class="product-detail-description">
+          {{ product.description }}
+        </div>
+
+        {%- form 'product', product, id: 'product-form-installment', class: 'product-buy-form' -%}
+          <!-- Variant selector -->
+          <input type="hidden" name="id" value="{{ product.first_available_variant.id }}">
+          
+          <div class="quantity-selector-container">
+            <label for="Quantity-{{ section.id }}" class="quantity-label">Quantity</label>
+            <div class="quantity-selector" style="max-width: 120px;">
+              <button type="button" class="qty-btn" onclick="updateDetailPageQty(-1)">-</button>
+              <input type="number" name="quantity" id="Quantity-{{ section.id }}" value="1" min="1" class="qty-val-input" style="background: transparent; border: none; color: white; width: 40px; text-align: center; font-weight: 700;">
+              <button type="button" class="qty-btn" onclick="updateDetailPageQty(1)">+</button>
+            </div>
+          </div>
+
+          <div class="buy-buttons" style="margin-top: 30px; display: flex; gap: 15px;">
+            {%- if product.available -%}
+              <button 
+                type="submit" 
+                name="add" 
+                class="btn btn-primary" 
+                style="flex-grow: 1;"
+                onclick="addToCartAJAX({{ product.first_available_variant.id }}, this); return false;"
+              >
+                Add to Bag
+              </button>
+              {{ form | payment_button }}
+            {%- else -%}
+              <button type="button" class="btn btn-primary" disabled style="background: var(--text-muted); cursor: not-allowed; flex-grow: 1;">
+                Out of Stock
+              </button>
+            {%- endif -%}
+          </div>
+        {%- endform -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  function updateDetailPageQty(delta) {
+    const input = document.getElementById("Quantity-{{ section.id }}");
+    if (!input) return;
+    let val = parseInt(input.value) || 1;
+    val += delta;
+    if (val < 1) val = 1;
+    input.value = val;
+  }
+</script>
+
+<style>
+  .product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-top: 40px;
+  }
+  .product-featured-img {
+    width: 100%;
+    border-radius: 12px;
+    border: var(--border-gold);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+  }
+  .product-detail-info {
+    display: flex;
+    flex-direction: column;
+  }
+  .product-detail-title {
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    margin: 10px 0 20px 0;
+  }
+  .product-detail-price {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .product-detail-description {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+  }
+  .quantity-selector-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .quantity-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+  }
+  .qty-val-input::-webkit-outer-spin-button,
+  .qty-val-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .qty-val-input {
+    -moz-appearance: textfield;
+  }
+  @media (max-width: 768px) {
+    .product-detail-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Product Details",
+  "settings": []
+}
+{% endschema %}

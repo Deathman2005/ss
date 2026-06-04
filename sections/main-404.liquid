@@ -1,0 +1,19 @@
+{%- comment -%}
+  Main 404 Section for Shahi Serve.
+{%- endcomment -%}
+
+<section class="main-404-section" style="padding-top: calc(var(--header-height) + 100px); text-align: center; padding-bottom: 100px;">
+  <div class="container animate-on-scroll">
+    <span class="section-tagline">Error 404</span>
+    <h1 class="section-title">Royal Recipe Not Found</h1>
+    <p class="section-desc" style="margin-bottom: 30px;">The culinary page you are looking for has been moved or slow-cooked elsewhere.</p>
+    <a href="{{ routes.root_url }}" class="btn btn-primary">Return to Banquet</a>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 Page",
+  "settings": []
+}
+{% endschema %}
